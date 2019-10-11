@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:padding="@dimen/padding"
+    >
+
+    <TextView
+        android:id="@+id/titulo_login"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
+        android:textColor="@color/colorAccent"
+        android:textSize="24sp"
+        android:text="@string/title_login"
+        android:layout_marginTop="15sp"
+         />
+
+    <TextView
+        android:id="@+id/sub_title_login"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Inicia sesión para empezar"
+        android:gravity="center"
+        android:textSize="18sp"
+        android:layout_centerHorizontal="true"
+
+        android:layout_below="@id/titulo_login"
+        />
+
+    <ImageView
+        android:id="@+id/img_login"
+        android:layout_width="250dp"
+        android:layout_height="250dp"
+        android:src="@drawable/car_login"
+        android:layout_below="@id/sub_title_login"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="@dimen/padding"
+        android:contentDescription="@string/img_login" />
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/container_user_et"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/img_login"
+        >
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/et_user"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/hint_user_et" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/container_pass_et"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/container_user_et"
+        >
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/et_pass"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/hint_pass_et" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <CheckBox
+        android:id="@+id/chk_login"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/container_pass_et"
+        android:text="@string/recordarme_login"
+        />
+
+    <Button
+        android:id="@+id/btn_login"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/iniciar_sesion_login"
+        android:padding="@dimen/padding"
+        android:textColor="@android:color/white"
+
+        style="@style/Widget.AppCompat.Button.Borderless"
+        android:background="@color/colorAccent"
+        android:layout_below="@id/chk_login"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="@dimen/padding"/>
+
+
+</RelativeLayout>

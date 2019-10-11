@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">persistenciaEnAndroid</string>
+    <string name="title_login">Bienvenido a Parking Control</string>
+    <string name="img_login">img_login</string>
+    <string name="hint_user_et">Nombre de usuario</string>
+    <string name="hint_pass_et">Contraseña</string>
+    <string name="recordarme_login">Recordarme</string>
+    <string name="iniciar_sesion_login">iniciar sesion</string>
+
+</resources>
