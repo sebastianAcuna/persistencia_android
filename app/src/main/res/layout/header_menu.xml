@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/colorPrimary"
+    android:padding="16dp">
+
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/icon_user"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:src="@drawable/red_person"
+        android:background="@drawable/rounded_icon"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="16dp"
+
+        />
+
+
+    <TextView
+        android:id="@+id/user_name_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="usuario"
+        android:textColor="@android:color/white"
+        android:layout_below="@id/icon_user"
+        android:textSize="18sp"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="16dp"
+        android:textStyle="bold"/>
+
+    <TextView
+        android:id="@+id/user_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/user_name_title"
+        android:text="usuario@nextuparking.com"
+        android:textColor="@android:color/white"
+
+        android:layout_marginStart="16dp"
+
+        />
+
+
+
+
+</RelativeLayout>

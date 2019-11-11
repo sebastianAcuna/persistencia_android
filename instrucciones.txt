@@ -1,0 +1,88 @@
+El propietario de varios parqueaderos ubicados en el centro de tu ciudad desea implementar una aplicación nativa Android que le permita llevar un control práctico de los parqueos a través de su teléfono móvil.
+Tu Misión:
+
+Con la finalidad de evaluar la viabilidad del proyecto, debes elaborar un prototipo de la aplicación en el cual definas las características básicas de persistencia de datos dentro de la aplicación. Dicho prototipo debe estar estructurado de la siguiente manera:
+
+Paso 1:
+
+   ** Debes dar a la actividad principal la apariencia de un inicio de sesión. Este contendrá un mensaje de bienvenida, un ícono o imagen representativa de la aplicación, un par de cajas de texto para el nombre de usuario y la contraseña, además de una casilla con el texto "Recordarme".
+
+    **Al presionar sobre el botón de inicio de sesión, debe validarse que el usuario haya ingresado los datos tanto en la casilla de nombre de usuario, como en la de contraseña. Así mismo, es necesario comprobar si el usuario ha marcado la casilla de "Recordarme".
+
+   ** Debes desarrollar una segunda actividad hacia la cual debe navegar la aplicación una vez se presione el botón de inicio de sesión en la actividad principal.
+
+    Dicha segunda actividad contará con un cajón de navegación. Este contendrá, en el encabezado, un ícono referente al usuario, seguido de un texto con el nombre de usuario con el que se inició sesión y un segundo texto que representará el correo electrónico del usuario; este último contendrá el nombre de usuario, seguido de un dominio de ejemplo.
+
+    Si el usuario finaliza la aplicación estando en la segunda actividad, debe conservarse su nombre de usuario en caso de que haya marcado la casilla de “Recordarme” al iniciar sesión. De esta forma, los textos del encabezado del cajón de navegación podrán mostrar nuevamente los datos del usuario en una posterior ejecución de la aplicación, en la cual se omitirá el inicio de sesión.
+
+    En el cajón de navegación deben figurar dos opciones: la primera, con el título "Parqueos"; la segunda, con el texto "Mi cuenta". Ambas deben contar con un ícono que las represente.
+
+    De acuerdo con los puntos anteriores, la actividad principal y el cajón de navegación de la segunda actividad pueden lucir una apariencia similar a la que se muestra a continuación:
+
+    En el siguiente video podrás observar el comportamiento de las actividades requeridas en este punto:
+
+Video no soportado.
+
+Paso 2:
+
+    Debes definir un fragmento que se encuentre ligado a la opción "Parqueos" del cajón de navegación desarrollado anteriormente. Este fragmento, inicialmente, contará con un botón flotante representativo de la acción agregar.
+
+    Al presionar el botón agregar del fragmento de Parqueos, se genera un diálogo personalizado con dos campos de texto. Dichos campos son para la matrícula del vehículo que ingresa al parqueadero y un id correspondiente al cliente que ingresa el vehículo.
+
+    El diálogo desarrollado en el punto anterior debe contar con sus respectivos botones de registrar y cancelar, además de un título afín a su función en la parte superior. Al presionar el botón registrar, se comprueba que los campos de texto no están vacíos y, cumpliendose esto, los datos registrados deben almacenarse en un archivo de texto en el almacenamiento interno.
+
+    De esta forma, el fragmento una vez cargado y el diálogo para el registro de parqueos debe lucir de forma similar a como se muestra a continuación:
+
+    En el contenido del fragmento de "Parqueos" debe cargarse el contenido del archivo de texto donde se guardan los datos de los parqueos, mostrando cada parqueo individualmente en forma de tarjetas. Para esto, debes definir la estructura de un ítem con dos textos, uno para la matrícula y el otro para el id del cliente.
+
+    Al tener varios parqueos registrados, se debe apreciar algo similar a la imagen que se muestra a continuación:
+
+    El siguiente video ilustra la implementación de los anteriores requisitos:
+
+Video no soportado.
+
+Paso 3:
+
+    Debes crear un segundo fragmento ligado a la segunda opción del cajón de navegación titulada "Mi cuenta", en este se carga un fragmento de configuraciones en el cual se ofrece al usuario tres preferencias que puede editar.
+
+    La primera preferencia es para el nombre de usuario. Esta es la única que tiene un efecto sobre la aplicación, ya que, al ser editado el nombre de usuario, se actualiza los datos del usuario que se muestran en el encabezado del cajón de navegación.
+
+    Las dos preferencias restantes serán una de texto para definir una nueva contraseña y un switch correspondiente al envío de notificaciones por correo electrónico.
+
+    Cada una de las preferencias definidas en los puntos anteriores cuenta con descripciones afines a ellas. Con esto, una vez cargado el fragmento de “Mi cuenta”, debe lucir similar a como se muestra a continuación:
+
+    En el siguiente video podrás observar el comportamiento de las actividades requeridas en este punto:
+
+Video no soportado.
+
+Paso 4:
+
+    La segunda actividad debe contar con un menú de opciones en el cual se deben incluir las opciones de "Exportar registros" y "Cerrar sesión”.
+
+    La opción "Exportar registros" debe generar un diálogo en el cual el usuario indica si desea o no conservar los registros de manera local. Al presionar la opción aceptar en dicho diálogo, se debe almacenar de manera externa el texto contenido en el archivo local donde los parqueos fueron almacenados, eliminando además el archivo local si el usuario ha indicado que exportará los registros sin conservarlos localmente.
+
+    De acuerdo con los puntos anteriores, el menú de opciones y el diálogo deben lucir como se muestra a continuación:
+
+    En el siguiente video podrás observar el comportamiento de las actividades requeridas en este punto:
+
+Video no soportado.
+
+    Al exportar los registros sin conservarlos localmente, se deberá restaurar el fragmento de "Parqueos" hacia su estado inicial.
+
+    La opción de "Cerrar sesión" devuelve al usuario a la interfaz de usuario de inicio de sesión, descartando los datos almacenados con respecto a este en las preferencias.
+
+Paso 5:
+
+    Diseña un modelo relacional en el cual ilustres una propuesta de base de datos para la gestión del parqueadero. Para esto toma en cuenta las siguientes entidades:
+
+        Vehículo (Es aquel que ingresa al parqueadero)
+
+        Cliente (Es el que ingresa el vehículo al parqueadero)
+
+        Parqueo (Se genera al ingresar un vehículo al parqueadero)
+
+    Para el modelo relacional deberás agregar tres atributos que consideres apropiados para cada entidad, además de sus respectivos identificadores.
+
+    Establece las relaciones que sean necesarias entre las entidades definidas.
+
+Recuerda seguir atentamente las instrucciones para garantizar que tu resultado final cumpla con todos los requisitos enunciados. Con los conocimientos adquiridos durante tu curso de Interfaces de Usuario podrás desarrollar exitosamente este proyecto y así continuar con tu proceso de aprendizaje en Android con Next University.
