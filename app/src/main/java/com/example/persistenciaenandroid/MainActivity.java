@@ -13,6 +13,8 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.material.navigation.NavigationView;
+
 import java.util.prefs.Preferences;
 
 public class MainActivity extends AppCompatActivity {
@@ -21,6 +23,7 @@ public class MainActivity extends AppCompatActivity {
     private Button btn_login;
     private CheckBox chk_login;
     private SharedPreferences shared;
+    private NavigationView navigationView;
 
 
 
@@ -33,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
 
         bind();
 
-        if(!TextUtils.equals(shared.getString(Utilidad.SHARED_LOGIN_USER,""),"") && !TextUtils.equals(shared.getString(Utilidad.SHARED_LOGIN_PASS,""),"")){
+        if(!TextUtils.isEmpty(shared.getString(Utilidad.SHARED_LOGIN_USER,"")) && !TextUtils.isEmpty(shared.getString(Utilidad.SHARED_LOGIN_PASS,""))){
             Intent intent = new Intent(MainActivity.this, actividadPrincipal.class);
             startActivity(intent);
         }
@@ -61,6 +64,9 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
+
+
+
 
     void bind(){
         chk_login = (CheckBox) findViewById(R.id.chk_login);

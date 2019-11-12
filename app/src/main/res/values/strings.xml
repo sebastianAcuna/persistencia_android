@@ -7,4 +7,8 @@
     <string name="recordarme_login">Recordarme</string>
     <string name="iniciar_sesion_login">iniciar sesion</string>
 
+
+    <string name="open_drawer">Open navigation drawer</string>
+    <string name="close_drawer">Close navigation drawer</string>
+
 </resources>
