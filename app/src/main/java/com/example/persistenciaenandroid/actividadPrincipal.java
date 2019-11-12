@@ -1,6 +1,7 @@
 package com.example.persistenciaenandroid;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
@@ -13,11 +14,15 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.TextView;
 
+import com.example.persistenciaenandroid.clases.Utilidad;
+import com.example.persistenciaenandroid.fragments.CuentaFragment;
+import com.example.persistenciaenandroid.fragments.ParkingFragment;
 import com.google.android.material.navigation.NavigationView;
 
 import java.util.Objects;
@@ -46,24 +51,21 @@ public class actividadPrincipal extends AppCompatActivity  implements Navigation
         if (navigationView != null) navigationView.setNavigationItemSelectedListener(this);
 
 
-        cambiarNombreUser();
-
-
-
-
+        cambiarNombreUser("");
+        setupActionBar();
 
     }
 
-    @Override
-    public void onBackPressed() {
-        super.onBackPressed();
-
-        Intent a = new Intent(Intent.ACTION_MAIN);
-        a.addCategory(Intent.CATEGORY_HOME);
-        a.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-        startActivity(a);
-
-    }
+//    @Override
+//    public void onBackPressed() {
+//        super.onBackPressed();
+//
+//        Intent a = new Intent(Intent.ACTION_MAIN);
+//        a.addCategory(Intent.CATEGORY_HOME);
+//        a.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+//        startActivity(a);
+//
+//    }
 
 
     public void updateView(String title, String subtitle){
@@ -84,10 +86,19 @@ public class actividadPrincipal extends AppCompatActivity  implements Navigation
     }
 
 
-    public void  cambiarNombreUser(){
+    private void setupActionBar() {
+        ActionBar actionBar = getSupportActionBar();
+        if (actionBar != null)
+            actionBar.setDisplayHomeAsUpEnabled(true);
+    }
+
+
+    public void  cambiarNombreUser(String nombreSend){
+
         if (navigationView != null){
 
-            String nombre = shared.getString(Utilidad.SHARED_LOGIN_USER,"user");
+
+            String nombre = (TextUtils.equals(nombreSend,"")) ? shared.getString(Utilidad.SHARED_LOGIN_USER,"user") : nombreSend;
             String correo = nombre+"@nextu.com";
 
             TextView nombreUsuario = (TextView) navigationView.getHeaderView(0).findViewById(R.id.user_name_title);
@@ -104,6 +115,7 @@ public class actividadPrincipal extends AppCompatActivity  implements Navigation
     public void cambiarFragment(Fragment fragment, String tag){
         getSupportFragmentManager().beginTransaction()
                 .replace(R.id.container, fragment,tag)
+                .addToBackStack(null)
                 .commit();
     }
 
@@ -118,7 +130,8 @@ public class actividadPrincipal extends AppCompatActivity  implements Navigation
                 cambiarFragment(new ParkingFragment(), Utilidad.FRAGMENT_PARKING);
                 break;
             case R.id.account:
-                cambiarFragment(new CuentaFragment(), Utilidad.FRAGMENT_CUENTA);
+                getFragmentManager().beginTransaction().replace(R.id.container, new CuentaFragment(), Utilidad.FRAGMENT_CUENTA).addToBackStack(null).commit();
+//                getSupportFragmentManager().beginTransaction().replace(R.id.container, new CuentaFragment()).commit()
                 break;
         }
 

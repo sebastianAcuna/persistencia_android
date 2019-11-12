@@ -11,4 +11,21 @@
     <string name="open_drawer">Open navigation drawer</string>
     <string name="close_drawer">Close navigation drawer</string>
 
+
+
+    <string name="title_order">Contraseña</string>
+    <string name="summary_order">clave que te permite iniciar sesión en la aplicación</string>
+
+
+
+
+
+    <string name="title_display_size">Nombre de usuario</string>
+    <string name="summary_display_size">El nombre con el que te identificas dentro de la aplicación</string>
+
+
+    <string name="title_confirm_delete">Notificaciones por correo electrónico</string>
+    <string name="summary_confirm_delete">Recibe notificaciones de la aplicacion, noticias e informacion relevante en tu cuenta de correo</string>
+
+
 </resources>

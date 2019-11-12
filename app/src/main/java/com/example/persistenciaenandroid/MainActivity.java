@@ -5,17 +5,16 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
-import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.persistenciaenandroid.clases.Utilidad;
 import com.google.android.material.navigation.NavigationView;
-
-import java.util.prefs.Preferences;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -48,6 +47,8 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 if(!TextUtils.isEmpty(user.getText().toString()) && !TextUtils.isEmpty(pass.getText().toString())){
                     if(chk_login.isChecked()){
+                        SharedPreferences configuraciones = PreferenceManager.getDefaultSharedPreferences(MainActivity.this);
+                        configuraciones.edit().remove(Utilidad.SHARED_LOGIN_USER).apply();
                         shared.edit().putString(Utilidad.SHARED_LOGIN_USER, user.getText().toString()).apply();
                         shared.edit().putString(Utilidad.SHARED_LOGIN_PASS, pass.getText().toString()).apply();
                     }else{

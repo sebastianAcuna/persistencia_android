@@ -1,6 +1,8 @@
-package com.example.persistenciaenandroid;
+package com.example.persistenciaenandroid.clases;
 
-public class Parking {
+import java.io.Serializable;
+
+public class Parking implements Serializable {
     private String numParking;
     private String idCliente;
 
